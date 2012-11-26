@@ -1,4 +1,6 @@
-package org.aiti.radio;
+package org.aiti.markplus;
+
+import org.aiti.markplus.R;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -28,7 +30,7 @@ public class RadioActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.radio_act);
 
 		((TextView) findViewById(R.id.linkName)).setText(current);
 
