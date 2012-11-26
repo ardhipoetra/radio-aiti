@@ -33,12 +33,12 @@ public class MainActActivity extends TabActivity {
     private void addtab(TabHost host, Class<?> classNext, String label) {
     	
     	//untk kustomisasi
-//		View tabIndicator = LayoutInflater.from(host.getContext()).inflate(R.layout.tab, null);
-//		TextView title = (TextView) tabIndicator.findViewById(R.id.tabsText);
-//		title.setText(label);
+		View tabIndicator = LayoutInflater.from(host.getContext()).inflate(R.layout.tab, null);
+		TextView title = (TextView) tabIndicator.findViewById(R.id.tabsText);
+		title.setText(label.toUpperCase()+".");
 		
 		TabSpec spec = host.newTabSpec(label);
-		spec.setIndicator(label);
+		spec.setIndicator(tabIndicator);
 		spec.setContent(new Intent(this, classNext));
 		host.addTab(spec);
 	}

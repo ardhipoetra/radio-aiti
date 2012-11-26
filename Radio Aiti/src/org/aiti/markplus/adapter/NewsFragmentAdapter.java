@@ -1,6 +1,8 @@
 package org.aiti.markplus.adapter;
 
 import org.aiti.markplus.util.TestFragment;
+import org.aiti.markplus.NewsFragment;
+import org.aiti.markplus.NewsMainFragment;
 import org.aiti.markplus.R;
 
 import com.viewpagerindicator.IconPagerAdapter;
@@ -26,7 +28,14 @@ public class NewsFragmentAdapter extends FragmentPagerAdapter implements IconPag
 
 	@Override
 	public Fragment getItem(int arg0) {
-		return TestFragment.newInstance(CONTENT[arg0 % CONTENT.length]);
+		switch (arg0) {
+		case 0:
+			return new NewsMainFragment();
+		default:
+			return new NewsFragment(CONTENT[arg0 % CONTENT.length]);
+		}
+		
+//		return TestFragment.newInstance(CONTENT[arg0 % CONTENT.length]);
 	}
 
 	@Override
@@ -38,5 +47,7 @@ public class NewsFragmentAdapter extends FragmentPagerAdapter implements IconPag
 	public CharSequence getPageTitle(int position) {
 		return CONTENT[position % CONTENT.length].toUpperCase();
 	}
+	
+	
 
 }
